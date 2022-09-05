@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter} from '@angular/core';
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'ngCalendar';
+
+  selected: Date = new Date();
+
+
+
+  date = new FormControl(new Date());
+
+
+  onInput(date: Date)  {
+    this.selected = new Date(date);
+    console.log(this.selected)
+  }
+
 }

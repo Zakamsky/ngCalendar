@@ -1,13 +1,31 @@
 <nav class="navbar">
   <div class="container navbar__container">
-    <a class="navbar__logo" href="/">MyCalendar</a>
+    <a class="navbar__logo" href="/">{{ title }}</a>
   </div>
 </nav>
 <div class="content container row">
   <div class="col">
 
+<!--    <mat-form-field appearance="fill">-->
+<!--      <mat-label>Value binding</mat-label>-->
+<!--      <input matInput [matDatepicker]="picker" [value]="selected" (dateInput)="onInput($event.value)" >-->
+<!--      <mat-hint>MM/DD/YYYY</mat-hint>-->
+<!--      <mat-datepicker-toggle matSuffix [for]="picker" disabled></mat-datepicker-toggle>-->
+<!--      <mat-datepicker #picker></mat-datepicker>-->
+<!--    </mat-form-field>-->
+
+<!--    <p>{{ date.value | date }}</p>-->
+
+    <mat-card class="calendar-card">
+      <mat-calendar [(selected)]="selected" #calendar></mat-calendar>
+    </mat-card>
+
   </div>
   <div class="col-wide">
-    there will be a list of appointments
+    <p class="content__title">Selected date: {{ selected | date}}</p>
+
+  <app-appointment-list></app-appointment-list>
+
+
   </div>
 </div>

@@ -1,0 +1,16 @@
+<div cdkDropListGroup>
+  <div class="drag-container" *ngFor="let item of dragLists | keyvalue">
+    <div class="drag-time">{{ item.key }}:00</div>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="item.value"
+      class="drag-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="drag-box" *ngFor="let item of item.value" cdkDrag>{{item}}</div>
+
+    </div>
+  </div>
+
+</div>
+

@@ -1,3 +1,5 @@
+
+
 .navbar {
   background-color: teal;
   color: white;
@@ -15,4 +17,17 @@
 
 .content {
   padding-block: 2rem;
+
+  &__title {
+    font-size: 2em;
+    margin-bottom: 2rem;
+  }
+}
+
+.calendar-card {
+  max-width: 400px;
+}
+
+.col-wide {
+  padding-left: 30px;
 }
